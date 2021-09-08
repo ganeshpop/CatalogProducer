@@ -56,9 +56,7 @@ public class MovieService {
 
 
     public Movie updateMovieName(int id, String name) {
-
         HttpEntity<Movie> httpEntity = new HttpEntity<>(new Movie());
-
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Movie> responseEntity = restTemplate.exchange("http://localhost:8082/movies/{id}/{name}", HttpMethod.PUT, httpEntity,
                 Movie.class, id, name);
